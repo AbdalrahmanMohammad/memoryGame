@@ -4,11 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Game</title>
+  <title>لعبة أسرار</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+
+  <!-- popup for result -->
+  <div class="result">
+    <div class="result-container">
+      <div class="icon"><i class="fa-regular fa-circle-check"></i></div>
+      <div class="message">مبروك عبدالرحمن لقد فزت باللعبة!</div>
+      <div class="no-of-worng">عدد المحاولات الخاطئة: 15</div>
+      <div class="date">15/5/2024</div>
+      <div class="share-with-us">فضلاً شاركنا بنتيجتك على منشور المسابقة على <a
+          href="https://www.facebook.com/profile.php?id=61558592159405">الفيسبوك</a></div>
+      <button class="play-again">أعد اللعب</button>
+    </div>
+  </div>
 
   <!-- Modal Popup for Entering Name -->
   <div class="name-popup" id="namePopup">
@@ -24,7 +40,8 @@
     <span>أهلا بك في لعبة أسرار</span>
     <span>شروط اللعبة</span>
     <ul>
-      <li>تابعنا على صفحة <a href="https://www.facebook.com/profile.php?id=61558592159405">الفيسبوك</a> حيث يتم الاعلان عن مسابقات بشكل دوري.</li>
+      <li>تابعنا على صفحة <a href="https://www.facebook.com/profile.php?id=61558592159405">الفيسبوك</a> حيث يتم الاعلان
+        عن مسابقات بشكل دوري.</li>
       <li>عندما تكون المسابقة قائمة ادخل الى لعبة اسرار.</li>
       <li>قم بادخال اسمك في اللعبة.</li>
       <li>عليك ايجاد الصور المتطابقة في محاولات أقل من 30 محاولة.</li>

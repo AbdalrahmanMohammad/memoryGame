@@ -1,3 +1,5 @@
+let numberOfSuccess=0;
+
 // Select The Start Game Button
 document.querySelector(".control-buttons span:last-child").onclick = function () {
 
@@ -118,9 +120,14 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
 
     let audioSuccess = document.getElementById('success');
     audioSuccess.pause();
-    audioSuccess.currentTime = 0;  // Reset to the beginning
-    audioSuccess.play();           // Play the audio
+    audioSuccess.currentTime = 0;  
+    audioSuccess.play();           
 
+    numberOfSuccess++;
+    if(numberOfSuccess==10)
+    {
+      showResult();
+    }
 
   } else {
 
@@ -178,3 +185,12 @@ document.getElementById('fail').playbackRate = 1.3;
   [2] Current Element = Random Element
   [3] Random Element = Get Element From Stash
 */
+
+function showResult()
+{
+
+}
+
+document.querySelector(".play-again").addEventListener("click",()=>{
+  location.reload();
+});
