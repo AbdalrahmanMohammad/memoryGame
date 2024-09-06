@@ -325,6 +325,26 @@ display: none;
   margin-top: 10px;
 }
 
-.result button:hover {
+.return-back button:hover {
   background-color: #0288d1;
 }
+
+
+.return-back {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #03a9f4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 25px;
+  margin-top: 10px;
+  left: -50%;
+  transform: translateX(50%);
+}
+
+.return-back:hover {
+  background-color: #0288d1;
+}
+

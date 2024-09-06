@@ -224,3 +224,7 @@ function showResult(flag) {
 document.querySelector(".play-again").addEventListener("click", () => {
   location.reload();
 });
+
+document.querySelector(".return-back").addEventListener("click", () => {
+  location.href = "https://asrar.pages.dev/";
+});
