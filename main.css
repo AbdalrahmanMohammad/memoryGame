@@ -230,7 +230,7 @@ body {
   margin-bottom: 15px;
   border: 2px solid #ccc;
   border-radius: 5px;
-}
+  }
 
 .name-popup-content button {
   padding: 10px 20px;
@@ -239,12 +239,21 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+  }
 
 .name-popup-content button:hover {
   background-color: #0288d1;
 }
 
+
+@media (min-width: 600px) {
+  .name-popup-content button,.name-popup-content input {
+    font-size: 25px;
+  }
+  .name-popup-content h2 {
+    font-size: 44px;
+  }
+}
 /* result popup */
 .result {
   position: fixed;
