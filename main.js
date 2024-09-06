@@ -1,5 +1,5 @@
 // Select The Start Game Button
-document.querySelector(".control-buttons span").onclick = function () {
+document.querySelector(".control-buttons span:last-child").onclick = function () {
 
   let nameInput = document.querySelector("#namePopup");
   let startGame = document.querySelector("#startGameBtn");

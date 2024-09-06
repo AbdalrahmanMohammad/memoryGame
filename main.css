@@ -15,13 +15,26 @@ body {
   height: 100%;
   z-index: 2;
   background-color: rgba(3, 169, 244, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  padding: 0 40px;
 }
 
-.control-buttons span {
+.control-buttons span:first-child {
+
+  font-weight: bold;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 50px;
+  font-size: 70px;
+
+}
+
+.control-buttons span:last-child {
+  margin-top: 20px;
   background-color: #F44336;
   color: #FFF;
   padding: 15px 25px;
@@ -29,6 +42,25 @@ body {
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
+}
+.control-buttons ul li{
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+
+  .control-buttons {
+    font-size: 16px;
+    padding: 0;
+
+  }
+
+  .control-buttons span:first-child {
+    font-size: 35px;
+  }
+  .control-buttons ul li{
+    margin-bottom: 7px;
+  }
 }
 
 .info-container {
@@ -40,6 +72,7 @@ body {
   overflow: hidden;
   border: 2px solid #2196f3;
 }
+
 @media (max-width: 700px) {
   .info-container {
     font-size: 18px;
@@ -60,7 +93,8 @@ body {
 
 .memory-game-blocks {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);  /* 5 items per row */
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 items per row */
   gap: 10px;
   width: 1100px;
   margin: 20px auto;
@@ -81,8 +115,10 @@ body {
 
 @media (max-width: 1130px) {
   .memory-game-blocks {
-    grid-template-columns: repeat(4, 1fr);  /* 4 items per row on small screens */
-    width: 100%;  /* Ensure full width on small screens */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 items per row on small screens */
+    width: 100%;
+    /* Ensure full width on small screens */
     max-width: 100%;
   }
 }
@@ -98,6 +134,7 @@ body {
   font-size: 140px;
   font-weight: bold;
 }
+
 @media (max-width: 990px) {
   .memory-game-blocks .game-block .front:before {
     content: '!';
