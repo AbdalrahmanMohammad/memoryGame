@@ -1,31 +1,33 @@
-let numberOfSuccess=0;
+let numberOfSuccess = 0;
+let triesElement = document.querySelector('.tries span');
+let yourName = "";
+
 
 // Select The Start Game Button
 document.querySelector(".control-buttons span:last-child").onclick = function () {
 
   let nameInput = document.querySelector("#namePopup");
   let startGame = document.querySelector("#startGameBtn");
-  let yourName = "";
   nameInput.style.display = "flex";
   startGame.onclick = function () {
     yourName = document.querySelector("#playerNameInput").value;
     nameInput.style.display = "none";
     // If Name Is Empty
-  if (yourName == null || yourName == "") {
+    if (yourName == null || yourName == "") {
 
-    // Set Name To Unknown
-    document.querySelector(".name span").innerHTML = 'مجهول';
+      // Set Name To Unknown
+      document.querySelector(".name span").innerHTML = 'مجهول';
 
-    // Name Is Not Empty
-  } else {
+      // Name Is Not Empty
+    } else {
 
-    // Set Name To Your Name
-    document.querySelector(".name span").innerHTML = yourName;
+      // Set Name To Your Name
+      document.querySelector(".name span").innerHTML = yourName;
 
-  }
+    }
 
-  // Remove Splash Screen
-  document.querySelector(".control-buttons").remove();
+    // Remove Splash Screen
+    document.querySelector(".control-buttons").remove();
   }
 
 
@@ -108,7 +110,6 @@ function stopClicking() {
 // Check Matched Block
 function checkMatchedBlocks(firstBlock, secondBlock) {
 
-  let triesElement = document.querySelector('.tries span');
 
   if (firstBlock.dataset.technology === secondBlock.dataset.technology) {
 
@@ -120,18 +121,21 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
 
     let audioSuccess = document.getElementById('success');
     audioSuccess.pause();
-    audioSuccess.currentTime = 0;  
-    audioSuccess.play();           
+    audioSuccess.currentTime = 0;
+    audioSuccess.play();
 
     numberOfSuccess++;
-    if(numberOfSuccess==10)
-    {
-      showResult();
+    if (numberOfSuccess == 10) {
+      showResult(true);
     }
 
   } else {
 
     triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+    if(parseInt(triesElement.innerHTML)>30)
+    {
+      showResult(false);
+    }
 
     setTimeout(() => {
 
@@ -186,11 +190,37 @@ document.getElementById('fail').playbackRate = 1.3;
   [3] Random Element = Get Element From Stash
 */
 
-function showResult()
-{
+function showResult(flag) {
+  let noOfTries=parseInt(triesElement.innerHTML);
+    let resultPopUp = document.querySelector(".result");
+  resultPopUp.style.display = "flex";
+  resultPopUp = resultPopUp.querySelector(".result-container");
+
+  let currentDate = new Date();
+  let day = currentDate.getDate();
+  let month = currentDate.getMonth() + 1; // Months are zero-indexed
+  let year = currentDate.getFullYear();
+    let formattedDate = `${day}/${month}/${year}`;
+
+  resultPopUp.querySelector(".date").innerHTML=formattedDate;
+
+  if(flag)// success
+  {
+    resultPopUp.querySelector(".message").innerHTML=`مبروك ${yourName} لقد فزت باللعبة!`;
+    resultPopUp.querySelector(".no-of-worng").innerHTML=`عدد المحاولات الخاطئة: ${noOfTries}`;
+  }
+  else{
+    resultPopUp.querySelector(".message").innerHTML=`عذرا ${yourName} لقد تجاوزت عدد المحاولات الخاطئة المسموحة`;
+    resultPopUp.querySelector(".no-of-worng").innerHTML=`عدد المحاولات الخاطئة: ${noOfTries}`;
+    resultPopUp.querySelector(".share-with-us").innerHTML=`نرجو منك إعادة المحاولة`;
+    resultPopUp.querySelector(".message").style.color="red";
+    resultPopUp.querySelector("i").style.color="red";
+    resultPopUp.querySelector("i").classList.add("fa-circle-xmark");
+    resultPopUp.querySelector("i").classList.remove("fa-circle-check");
+  }
 
 }
 
-document.querySelector(".play-again").addEventListener("click",()=>{
+document.querySelector(".play-again").addEventListener("click", () => {
   location.reload();
 });

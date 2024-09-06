@@ -290,10 +290,6 @@ display: none;
   font-size: 70px;
 }
 
-.fail-message{
-  color: red;
-}
-
 .result a {
   text-decoration: inherit;
   color: #3e5b7f;
