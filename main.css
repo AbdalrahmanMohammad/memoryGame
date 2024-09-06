@@ -5,6 +5,7 @@
 body {
   font-family: Arial, Tahoma, sans-serif;
   direction: rtl;
+  user-select: none; /* Prevent text selection */
 }
 
 .control-buttons {
