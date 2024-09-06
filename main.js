@@ -116,7 +116,11 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
     firstBlock.classList.add('has-match');
     secondBlock.classList.add('has-match');
 
-    document.getElementById('success').play();
+    let audioSuccess = document.getElementById('success');
+    audioSuccess.pause();
+    audioSuccess.currentTime = 0;  // Reset to the beginning
+    audioSuccess.play();           // Play the audio
+
 
   } else {
 
@@ -129,7 +133,10 @@ function checkMatchedBlocks(firstBlock, secondBlock) {
 
     }, duration);
 
-    document.getElementById('fail').play();
+    let audioFail = document.getElementById('fail');
+    audioFail.pause();
+    audioFail.currentTime = 0;  // Reset to the beginning
+    audioFail.play();           // Play the audio
 
   }
 
@@ -163,7 +170,8 @@ function shuffle(array) {
   }
   return array;
 }
-
+document.getElementById('success').playbackRate = 1.3;
+document.getElementById('fail').playbackRate = 1.3;
 // Current Array [9, 2, 10, 4, 5, 6, 7, 3, 1, 8]
 /*
   [1] Save Current Element in Stash
