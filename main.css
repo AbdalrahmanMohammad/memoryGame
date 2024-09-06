@@ -47,6 +47,11 @@ body {
   margin-bottom: 20px;
 }
 
+.control-buttons ul a{
+  text-decoration: inherit;
+  color: #4343ce;
+}
+
 @media (max-width: 700px) {
 
   .control-buttons {
@@ -126,6 +131,7 @@ body {
 .memory-game-blocks .game-block .front {
   background-color: #333;
   line-height: 200px;
+  overflow: hidden;
 }
 
 .memory-game-blocks .game-block .front:before {
