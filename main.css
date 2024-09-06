@@ -5,7 +5,14 @@
 body {
   font-family: Arial, Tahoma, sans-serif;
   direction: rtl;
-  user-select: none; /* Prevent text selection */
+  user-select: none;
+  min-height: calc(100vh);
+  background-color: white;
+  position: relative;
+  background-image: url("../project3/images/aborateb.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .control-buttons {
@@ -74,7 +81,9 @@ body {
 .info-container {
   width: 100%;
   margin: 20px auto 0;
-  background-color: #F6F6F6;
+  /* background-color: #F6F6F6; */
+  background-color: rgba(255, 255, 255, 0.4);
+
   padding: 20px;
   font-size: 24px;
   overflow: hidden;
